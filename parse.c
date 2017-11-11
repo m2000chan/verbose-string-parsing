@@ -10,17 +10,16 @@ char ** parse_args( char * line ){
     int i = 0;
 
     char * entry = malloc(2);
-    strsep(&line, " ");
     while (entry = strsep(&line, " "), entry != NULL){
-
-        pointers[i] = entry;
-        i ++;
-
-	printf("pointer %d: %s\n", i, pointers[i]);
+        
+		pointers[i] = entry;
+        i++;
+		printf("pointer %d: %s\n", i, pointers[i]);
+		
 
     }
 
-    pointers[i] = NULL;
+    //pointers[i] = NULL;
 
     //printf("[%s]\n", strsep( &line, " " ));
     //printf("[%s]\n", line);
@@ -30,7 +29,7 @@ char ** parse_args( char * line ){
 }
 
 int main(){
-
+	
     char line[100] = "ls -a -l";
 
     char * p = line;
@@ -40,7 +39,6 @@ int main(){
     //printf("args: %s, %s", args[0], args[1]);
 
     execvp(args[0], args);
-
     return 0;
 
 }
