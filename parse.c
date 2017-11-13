@@ -12,14 +12,13 @@ char ** parse_args( char * line ){
     char * entry = malloc(2);
     while (entry = strsep(&line, " "), entry != NULL){
         
-		pointers[i] = entry;
+	pointers[i] = entry;
         i++;
-		printf("pointer %d: %s\n", i, pointers[i]);
-		
+	//printf("pointer %d: %s\n", i, entry);	
 
     }
 
-    //pointers[i] = NULL;
+    pointers[i] = NULL;
 
     //printf("[%s]\n", strsep( &line, " " ));
     //printf("[%s]\n", line);
@@ -36,6 +35,13 @@ int main(){
 
     char ** args = parse_args(p);
 
+    /*
+    printf("args 1: %s\n", args[0]);
+    printf("args 2: %s\n", args[1]);
+    printf("args 3: %s\n", args[2]);
+    printf("args 4: %s\n", args[3]);
+    */
+    
     //printf("args: %s, %s", args[0], args[1]);
 
     execvp(args[0], args);
