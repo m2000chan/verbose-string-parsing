@@ -23,6 +23,7 @@ char ** parse_args( char * line ){
     //printf("[%s]\n", strsep( &line, " " ));
     //printf("[%s]\n", line);
 
+	free(entry);
     return pointers;
 
 }
