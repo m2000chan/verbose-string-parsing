@@ -5,11 +5,11 @@
 
 char ** parse_args( char * line ){
 
-    char ** pointers = malloc (5 * 2);
+    char ** pointers = malloc (1000);
 
     int i = 0;
 
-    char * entry = malloc(2);
+    char * entry = malloc(100);
     while (entry = strsep(&line, " "), entry != NULL){
         
 	pointers[i] = entry;
